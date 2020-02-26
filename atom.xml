@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>余腾靖的博客</title>
+  <icon>https://lyreal666.com/icon.png</icon>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://lyreal666.com/"/>
+  <updated>2020-02-20T12:02:10.877Z</updated>
+  <id>https://lyreal666.com/</id>
+  
+  <author>
+    <name>余腾靖</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零开始配置 react + typescript（三）：webpack</title>
+    <link href="https://lyreal666.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-react-typescript%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9Awebpack/"/>
+    <id>https://lyreal666.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-react-typescript%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9Awebpack/</id>
+    <published>2020-02-14T12:15:56.000Z</published>
+    <updated>2020-02-20T12:02:10.877Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇为 &lt;code&gt;从零开始配置 react + typescript&lt;/code&gt; 系列第三篇，将带大家完成模板项目的 webpack 配置。整个项目的配置我力求达到以下目标：&lt;/p&gt;&lt;p&gt;&lt;strong&gt;灵活：&lt;/strong&gt; 我在配置 eslint 是选择使用 js 格式而不是 json，就是为了灵活性，使用 js 文件可以让你使用环境变量动态配置，充分发挥 js 语言的能力。当然了，用 js 作配置文件也是有缺点的，不能使用 json schema 校验。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;新潮：&lt;/strong&gt; 我觉得时刻保持对新事物的关注和尝试去使用它是一个优秀的素质。当然，追新很容易碰到坑，但是，没关系，我已经帮你们踩过了，踩不过去我也不会写出来 😂。从我 eslint &lt;code&gt;parserOptions.ecmaVersion&lt;/code&gt; 设置为 2020， 还有经常来一发 &lt;code&gt;yarn upgrade --latest&lt;/code&gt; 都可以体现出来。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;严格：&lt;/strong&gt; 就像我平时判断相等性我大多数情况都是使用严格等 &lt;code&gt;===&lt;/code&gt;，而不是非严格等 &lt;code&gt;==&lt;/code&gt;，我觉得越严格，分析起来就越清晰，越早能发现问题。例如我么后面会使用一些 webpack 插件来严格检查模块大小写，检查是否有循环依赖。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;安逸：&lt;/strong&gt; 项目中会尽量集成当前前端生态界实用的和能提高开发愉悦性的（换个词就是花里胡哨）工具。&lt;/p&gt;&lt;p&gt;&lt;strong&gt;生产 ready&lt;/strong&gt;：配置的时候针对不同的打包环境针对性优化，并确保能够投入生产环境使用。&lt;/p&gt;&lt;p&gt;如果读者是初次看到这篇文章，建议先看下前两篇：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;a href=&quot;https://lyreal666.com/从零开始配置-react-typescript（一）：dotfiles/&quot;&gt;从零开始配置 react + typescript（一）：dotfiles&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://lyreal666.com/从零开始配置-react-typescript（二）：linters-和-formatter/&quot;&gt;从零开始配置 react + typescript（二）：linters 和 formatter&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;项目地址：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9naXRodWIuY29tL3RqeDY2Ni9yZWFjdC10eXBlc2NyaXB0LWJvaWxlcnBsYXRl&quot; title=&quot;https://github.com/tjx666/react-typescript-boilerplate&quot;&gt;react-typescript-boilerplate&lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="react" scheme="https://lyreal666.com/tags/react/"/>
+    
+      <category term="typescript" scheme="https://lyreal666.com/tags/typescript/"/>
+    
+      <category term="webpack" scheme="https://lyreal666.com/tags/webpack/"/>
+    
+      <category term="express" scheme="https://lyreal666.com/tags/express/"/>
+    
+      <category term="babel" scheme="https://lyreal666.com/tags/babel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始配置 react + typescript（二）：linters 和 formatter</title>
+    <link href="https://lyreal666.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-react-typescript%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Alinters-%E5%92%8C-formatter/"/>
+    <id>https://lyreal666.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-react-typescript%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Alinters-%E5%92%8C-formatter/</id>
+    <published>2020-02-02T10:27:00.000Z</published>
+    <updated>2020-02-23T03:01:52.706Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;继 &lt;a href=&quot;https://lyreal666.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-react-typescript%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Adotfiles/&quot;&gt;从零开始配置 react + typescript（一）：dotfiles&lt;/a&gt; 介绍了一些最先配置的 dotfiles，本篇将继续介绍 lint 工具 eslint，stylelint，代码格式化工具 prettier，用 husky + lint-staged 来实现每次 commit 时只 lint 修改过的代码，以及使用 commitlint 来规范化 commit message。&lt;/p&gt;&lt;p&gt;项目地址：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9naXRodWIuY29tL3RqeDY2Ni9yZWFjdC10eXBlc2NyaXB0LWJvaWxlcnBsYXRl&quot; title=&quot;https://github.com/tjx666/react-typescript-boilerplate&quot;&gt;react-typescript-boilerplate&lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="eslint" scheme="https://lyreal666.com/tags/eslint/"/>
+    
+      <category term="stylelint" scheme="https://lyreal666.com/tags/stylelint/"/>
+    
+      <category term="lint-staged" scheme="https://lyreal666.com/tags/lint-staged/"/>
+    
+      <category term="commitlint" scheme="https://lyreal666.com/tags/commitlint/"/>
+    
+      <category term="prettier" scheme="https://lyreal666.com/tags/prettier/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始配置 react + typescript（一）：dotfiles</title>
+    <link href="https://lyreal666.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-react-typescript%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Adotfiles/"/>
+    <id>https://lyreal666.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-react-typescript%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Adotfiles/</id>
+    <published>2020-02-01T04:25:00.000Z</published>
+    <updated>2020-02-20T09:32:01.864Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前我写过一篇文章 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9qdWVqaW4uaW0vcG9zdC81Y2Q1OTZkNDUxODgyNTY4ODk3ZDg5Yzg=&quot; title=&quot;https://juejin.im/post/5cd596d451882568897d89c8&quot;&gt;搭建 react + typescript + ant design 开发环境&lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;，现在看来很多内容都已经过时了。但是我看到前不久还有读者给我这篇文章点赞，不更新的话总感觉坑了它们，有点过意不去。但是，如果现在让我再去配置那套环境，我肯定不会再像那篇文章那样配置了，毕竟过了这么长一段时间，很多工具都在发展，我的想法也在改变，那么干脆我就再整一篇新的文章，这是我创作这篇文章的动机之一。&lt;/p&gt;&lt;p&gt;最近一段时间，我写过不少类型的项目，有 &lt;code&gt;chrome 扩展&lt;/code&gt;，&lt;code&gt;VSCode 扩展&lt;/code&gt;， &lt;code&gt;electron&lt;/code&gt; 等，配置开发环境都是裸写的，并没有使用一些 cli 工具或者第三方的项目模板。因此，我踩过不少坑，也总结了不少的经验。所以另一个创作动机就想总结和分享一下我配置开发环境的最佳实践。&lt;/p&gt;&lt;p&gt;我使用的开发机和编辑器分别是 &lt;code&gt;win10pro-1909&lt;/code&gt; 和 &lt;code&gt;VSCode&lt;/code&gt;，使用的所有依赖都是最新的，并且文章会不定时更新，确保具有时效性。&lt;/p&gt;&lt;p&gt;文章将按照开发一个模板项目的时间顺序预计分成四篇来写：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;dotfiles&lt;/li&gt;&lt;li&gt;linters 和 formatter&lt;/li&gt;&lt;li&gt;webpack&lt;/li&gt;&lt;li&gt;第三方库集成和优化&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;项目地址：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9naXRodWIuY29tL3RqeDY2Ni9yZWFjdC10eXBlc2NyaXB0LWJvaWxlcnBsYXRl&quot; title=&quot;https://github.com/tjx666/react-typescript-boilerplate&quot;&gt;react-typescript-boilerplate&lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="react" scheme="https://lyreal666.com/tags/react/"/>
+    
+      <category term="typescript" scheme="https://lyreal666.com/tags/typescript/"/>
+    
+      <category term="dotfile" scheme="https://lyreal666.com/tags/dotfile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>讲清楚 JavaScript 原型</title>
+    <link href="https://lyreal666.com/%E8%AE%B2%E6%B8%85%E6%A5%9A-JavaScript-%E5%8E%9F%E5%9E%8B/"/>
+    <id>https://lyreal666.com/%E8%AE%B2%E6%B8%85%E6%A5%9A-JavaScript-%E5%8E%9F%E5%9E%8B/</id>
+    <published>2020-01-27T07:24:00.000Z</published>
+    <updated>2020-02-06T11:16:23.753Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记得以前知乎上看到过一个问题：&lt;a href=&quot;https://www.zhihu.com/question/60165921&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;面试一个 5 年的前端，却连&lt;strong&gt;原型链&lt;/strong&gt;也搞不清楚，满口都是 Vue，React 之类的实现，这样的人该用吗？&lt;/a&gt; 。写文章的时候又回去看了下这个问题，300 多个回答，有很多大佬都回答了这个问题，说明这个问题还是挺受关注的。最近几年，随着 ES6 ，TypeScript 及类似的中间语言的流行，我们平时做业务开发很少能接触到原型，基本上都是用 ES6 class 来去更简单的，更直观的实现以前构造器加原型做的事情。&lt;/p&gt;&lt;p&gt;其实在我看来，我觉得原型链是一个非常重要的基础知识。如果一个人说他 C 语言很精通，但是他汇编不熟，你信吗？我觉得 winter 说的挺简洁到位的：&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;这又涉及到我之前讲过的面试官技巧，面试，是对一个人的能力系统性评价，搞清楚一个人擅长什么不会什么，所以问知识性问题，为了避免误判，一定要大量问、系统化地问。&lt;/p&gt;&lt;p&gt;不会原型很能说明问题，至少他在库的设计方面会有极大劣势，而且可能学习习惯上是有问题的，也有可能他根本就不太会 JS 语言，但是这不意味着凭借一个问题就可以判定这个人不能用。&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;本文包括以下内容：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;JavaScript 原型&lt;/li&gt;&lt;li&gt;构造器和 &lt;code&gt;prototype&lt;/code&gt;&lt;/li&gt;&lt;li&gt;原型链&lt;/li&gt;&lt;li&gt;原型的用途&lt;/li&gt;&lt;li&gt;ES6 class 和构造器的关系&lt;/li&gt;&lt;li&gt;原型继承&lt;/li&gt;&lt;li&gt;JavaScript 和原型相关语法特性&lt;/li&gt;&lt;li&gt;原型污染&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="prototype" scheme="https://lyreal666.com/tags/prototype/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 webpack 构建 chrome 扩展的热更新问题</title>
+    <link href="https://lyreal666.com/%E4%BD%BF%E7%94%A8-webpack-%E6%9E%84%E5%BB%BA-chrome-%E6%89%A9%E5%B1%95%E7%9A%84%E7%83%AD%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/"/>
+    <id>https://lyreal666.com/%E4%BD%BF%E7%94%A8-webpack-%E6%9E%84%E5%BB%BA-chrome-%E6%89%A9%E5%B1%95%E7%9A%84%E7%83%AD%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/</id>
+    <published>2020-01-15T14:02:00.000Z</published>
+    <updated>2020-02-06T11:13:31.814Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前不久我写了一个 chrome 扩展，作为一个前端弄潮儿，我当然想用上各种前端界最 fashion 的开发工具。于是乎，折腾到最后使用了 webpack + TypeScript + react 这么一套技术栈。在 github 上研究了几个模板项目之后，发现大多数都太初级了，功能太简单，而且有一个我觉应当提供的很基础的功能始终没发现有哪个项目支持，也就是当修改了 content script 之后自动 reload 扩展和刷新注入了 content script 的页面这个问题。这个问题如果解决了，你就不需要每次修改了扩展代码还去 chrome 扩展列表页面点下刷新按钮刷新扩展。最后在研究了 webpack 的热更新机制和查阅了 webpack 和 chome 扩展官方文档之后解决了这个问题。在开发完我那个扩展之后，我便将其提取成了一个模板项目 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9naXRodWIuY29tL3RqeDY2Ni9hd2Vzb21lLWNocm9tZS1leHRlbnNpb24tYm9pbGVycGxhdGU=&quot; title=&quot;https://github.com/tjx666/awesome-chrome-extension-boilerplate&quot;&gt;awesome-chrome-extension-boilerplate&lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;。&lt;/p&gt;&lt;p&gt;其实我在使用 webpack + TypeScript + react 这套技术栈开发 chrome 扩展时碰到的问题真不少，如果全拿出来讲没个两万字我估计是写不完。这篇文章主要聊聊 webpack 开发 chrome 扩展的热更新问题，并重点讲解我是如何实现修改了 content script 之后自动 reload 扩展和刷新注入了 content script 的页面的，这也是我那个模板的最大特色，也算是给它的 README 做个补充。&lt;/p&gt;&lt;p&gt;在阅读文章之前，希望读者对 webpack 和 chrome 扩展开发有基本的了解。本文的主要内容分为：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;我对 chrome 扩展的理解&lt;/li&gt;&lt;li&gt;各种页面的热更新问题分析&lt;/li&gt;&lt;li&gt;如何实现修改了 content script 之后自动 reload 扩展和刷新注入了 content script 的页面&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="typescript" scheme="https://lyreal666.com/tags/typescript/"/>
+    
+      <category term="webpack" scheme="https://lyreal666.com/tags/webpack/"/>
+    
+      <category term="express" scheme="https://lyreal666.com/tags/express/"/>
+    
+      <category term="chrome extension" scheme="https://lyreal666.com/tags/chrome-extension/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>全面总结 JavaScript 类型相关知识点</title>
+    <link href="https://lyreal666.com/%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93-JavaScript-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>https://lyreal666.com/%E5%85%A8%E9%9D%A2%E6%80%BB%E7%BB%93-JavaScript-%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/</id>
+    <published>2020-01-14T07:39:00.000Z</published>
+    <updated>2020-02-06T11:15:58.177Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;相信到了年底，不少前端都准备找工作跳槽了。而作为春招大军的一员，估计很多准备春招的应届生和我一样这个年过得很焦虑。JavaScript 类型是前端面试中考察 JavaScript 基础的常考知识点，经常性第一个问题就是 JavaScript 中有哪些类型。&lt;/p&gt;&lt;p&gt;笔者今年从春招实习到秋招经历了挺多的面试，也总结了一些规律：一般来讲第一轮面试往往就是考察基础，就算你简历很牛逼那也得走个流程啊。而考察基础一般就按照 HTML，CSS，JavaScript，计算机网络，常见的 web 安全，后端知识如数据库，鉴权，再就是最后来两道算法题或智力题或数学题。&lt;/p&gt;&lt;p&gt;最近几个月我都很少像以前那样一天到晚刷掘金和知乎的文章，基本上就是在开源项目中实战学习，我觉得刚入门前端的人确实需要多看一些优质的博客。&lt;strong&gt;刚入门更需要广度，随后是广度和深度并行，最后才是深度&lt;/strong&gt;。其实说人话就是：刚开始入门时因为没怎么写过项目，懂得太少，所以需要多看，被动吸收。到后来有一定广度了，你会发现其实你在写一个项目的时候往往碰到的问题就是因为你的深度不够，这个时候你会更注重深度。最后当你广度慢慢到了一定程度后，由于网络上 99% 的文章都是小白文，你看了标题之后就大概闻的出文章是啥内容，看了对你也没啥用，这个时候你更因该把时间花在一个小的领域，注重深度，深度才是最能体现一个程序员&lt;strong&gt;技术价值&lt;/strong&gt;的地方。&lt;/p&gt;&lt;p&gt;前面唠叨了一堆废话，下面正式开始本文内容。本文内容主要分两部分：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;总结 JavaScript 中各种类型一些值得注意的地方，小技巧和个人心得&lt;/li&gt;&lt;li&gt;JavaScript 如何进行类型判断&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="https://lyreal666.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript 基础之 call, apply, bind</title>
+    <link href="https://lyreal666.com/javascript-%E5%9F%BA%E7%A1%80%E4%B9%8B-call-apply-bind/"/>
+    <id>https://lyreal666.com/javascript-%E5%9F%BA%E7%A1%80%E4%B9%8B-call-apply-bind/</id>
+    <published>2019-06-27T13:29:00.000Z</published>
+    <updated>2020-02-06T11:08:57.481Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;系统，扎实的 javascript 语言基础是一个优秀的前端工程师必须具备的。在看了一些关于 call，apply，bind 的文章后，我还是打算写下这篇总结，原因有几个。首先，在如今 ES6 大行其道的今天，很多文章中讲述的它们的应用场景其实用 ES6 可以更优雅的解决，但是基本上·没有文章会去提 ES6 的解法。再则，讲它们的实现原理的文章其实不少，但是或多或少实现的有些不够完美，本文将把它们通过代码一一比较完美的实现，让它们不再神秘。不谦虚的说，关于 call，apply，bind 的知识，看这一篇文章就够了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="https://lyreal666.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过 koa2 服务器实践探究浏览器 HTTP 缓存机制</title>
+    <link href="https://lyreal666.com/%E9%80%9A%E8%BF%87-koa2-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E8%B7%B5%E6%8E%A2%E7%A9%B6%E6%B5%8F%E8%A7%88%E5%99%A8HTTP%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
+    <id>https://lyreal666.com/%E9%80%9A%E8%BF%87-koa2-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E8%B7%B5%E6%8E%A2%E7%A9%B6%E6%B5%8F%E8%A7%88%E5%99%A8HTTP%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/</id>
+    <published>2019-06-17T02:22:00.000Z</published>
+    <updated>2020-02-06T11:12:49.127Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;浏览器 HTTP 缓存是一种常见的 web 性能优化的手段，也是在前端面试中经常被考察的一个知识点。本文通过配置 koa2 服务器，在实践中带你探究浏览器的 HTTP 缓存机制。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://lyreal666.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="HTTP" scheme="https://lyreal666.com/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建 react + typescript + ant design 开发环境</title>
+    <link href="https://lyreal666.com/%E6%90%AD%E5%BB%BA-react-typescript-ant-design-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://lyreal666.com/%E6%90%AD%E5%BB%BA-react-typescript-ant-design-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</id>
+    <published>2019-05-09T13:52:00.000Z</published>
+    <updated>2020-02-06T11:17:03.100Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;9102 年了，前端工程化发展在 nodejs 的基础上已经发展的非常完善了，各种前端构建辅助工具层出不穷。ES6 编译器 babel，css 辅助工具 postcss / sass / less，代码风格检测工具 eslint / prettier / stylelint，git 辅助工具 husky / lint-staged / commitizen / commitlint，自动化构建工具 webpack / gulp / grunt，测试工具 jest / mocha 等等。&lt;/p&gt;&lt;p&gt;这么多开发辅助工具每次写项目都去配置一遍那也太浪费时间了，自己维护一套模板有得时不时去更新。比较方便的配置开发环境还是使用 cli 或者一些热门的 bolierplate。本篇文章将以 react 官方维护的 cli 工具 create-react-app （简称 cra）为基础，以不 eject 的方式去配置 ant design，以及一些 cra 并没有内置的辅助工具。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="react" scheme="https://lyreal666.com/tags/react/"/>
+    
+      <category term="typescript" scheme="https://lyreal666.com/tags/typescript/"/>
+    
+      <category term="webpack" scheme="https://lyreal666.com/tags/webpack/"/>
+    
+      <category term="ant design" scheme="https://lyreal666.com/tags/ant-design/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 常用操作</title>
+    <link href="https://lyreal666.com/git-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/"/>
+    <id>https://lyreal666.com/git-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</id>
+    <published>2019-05-08T11:28:00.000Z</published>
+    <updated>2020-02-06T11:10:46.718Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这几天电脑总是蓝屏，有时候重启时还显示找不到系统，然后多重启几次又正常进入系统。昨天电脑蓝屏重启不下十次，忍无可忍，无须再忍，只好重装系统，换上了最新的 win10 1903。1903 在用户界面上做了挺多优化，窗口阴影，浅色主题，磨砂锁屏等，还有 windows 沙盒等新玩意。&lt;/p&gt;&lt;p&gt;但是换了之后还是会蓝屏重启，说明是硬件的问题。怀疑是主板有问题，平时用的是笔记本自带的键盘，很容易进灰，有时候边看视频边吃饭的时候可能进了些菜水什么的。今天把电脑后盖拆了之后清了清灰，用吹风机对着自带键盘吹了半天热风，再次重新装了系统。一天下来，啥也没干，装各种软件，配环境，用到现在也没蓝屏，不知道能持续几天。这不，现在要重新配下 git，顺便写篇文章记录一下，省的以后重新配的时候还要到处查资料。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="开发工具" scheme="https://lyreal666.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="git" scheme="https://lyreal666.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>超实用的 chrome 扩展推荐</title>
+    <link href="https://lyreal666.com/%E8%B6%85%E5%AE%9E%E7%94%A8%E7%9A%84%20chrome%20%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/"/>
+    <id>https://lyreal666.com/%E8%B6%85%E5%AE%9E%E7%94%A8%E7%9A%84%20chrome%20%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/</id>
+    <published>2019-04-06T08:18:00.000Z</published>
+    <updated>2020-02-06T11:20:11.427Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img data-src=&quot;https://i.loli.net/2019/04/06/5ca8647de4816.png&quot; alt=&quot;新标签页&quot;&gt;&lt;/p&gt;&lt;p&gt;chrome 浏览器这么受欢迎，不仅是由于他的速度快，扩展的丰富和强大也是非常重要的一个因素。我是一个前端开发者，所以扩展中可能有相当大的一部份是开发者工具。当然了，程序员也是有生活娱乐的，我也收藏了许多普通大众适用的扩展。&lt;/p&gt;&lt;p&gt;我对工具的选择是比较挑剔的，同类型的插件中，我会优先选择免费，更新力度大，好评率高以及是否是官方出品的。我平时有事没事就会去 chrome 扩展市场去逛逛，也看过很多和 chrome 扩展相关的帖子，所以积攒的插件比较多。&lt;/p&gt;&lt;p&gt;一大波图片即将来袭，请在流量充足的情况下阅读[]&lt;del&gt;(￣ ▽ ￣)&lt;/del&gt;*&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="推荐" scheme="https://lyreal666.com/categories/%E6%8E%A8%E8%8D%90/"/>
+    
+    
+      <category term="chrome extension" scheme="https://lyreal666.com/tags/chrome-extension/"/>
+    
+      <category term="chrome" scheme="https://lyreal666.com/tags/chrome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 nodejs 写爬虫(二): 抓取 github 热门项目</title>
+    <link href="https://lyreal666.com/%E4%BD%BF%E7%94%A8-nodejs-%E5%86%99%E7%88%AC%E8%99%AB-%E4%BA%8C-%E6%8A%93%E5%8F%96-github-%E7%83%AD%E9%97%A8%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://lyreal666.com/%E4%BD%BF%E7%94%A8-nodejs-%E5%86%99%E7%88%AC%E8%99%AB-%E4%BA%8C-%E6%8A%93%E5%8F%96-github-%E7%83%AD%E9%97%A8%E9%A1%B9%E7%9B%AE/</id>
+    <published>2019-04-04T04:12:00.000Z</published>
+    <updated>2020-02-06T11:15:39.765Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实爬虫是一个对计算机综合能力要求比较高的技术活。&lt;/p&gt;&lt;p&gt;首先是要对网络协议尤其是 &lt;code&gt;http&lt;/code&gt; 协议有基本的了解, 能够分析网站的数据请求响应。学会使用一些工具，简单的情况使用 chrome devtools 的 network 面板就够了。我一般还会配合 postman 或者 charles 来分析，更复杂的情况可能举要使用专业的抓包工具比如 wireshark 了。你对一个网站了解的越深，越容易想出简单的方式来爬取你想获取的信息。&lt;/p&gt;&lt;p&gt;除了要了解一些计算机网络的知识，你还需要具备一定的字符串处理能力，具体来说就是正则表达式玩的溜，其实正则表达式一般的使用场景下用不到很多高级知识，比较常用的有点小复杂的就是分组，非贪婪匹配等。俗话说，学好正则表达式，处理字符串都不怕 🤣。&lt;/p&gt;&lt;p&gt;还有就是掌握一些反爬虫技巧，写爬虫你可能会碰到各种各样的问题，但是不要怕，再复杂的 12306 都有人能够爬，还有什么是能难到我们的。常见的爬虫碰到的问题比如服务器会检查 cookies, 检查 host 和 referer 头，表单中有隐藏字段，验证码，访问频率限制，需要代理, spa 网站等等。其实啊，绝大多数爬虫碰到的问题最终都可以通过操纵浏览器爬取的。&lt;/p&gt;&lt;p&gt;这篇使用 nodejs 写爬虫系列第二篇。实战一个小爬虫，抓取 github 热门项目。想要达到目标:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;学会从网页源代码中提取数据这种最基本的爬虫&lt;/li&gt;&lt;li&gt;使用 json 文件保存抓取的数据&lt;/li&gt;&lt;li&gt;熟悉我上一篇介绍的一些模块&lt;/li&gt;&lt;li&gt;学会 node 中怎样处理用户输入&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://lyreal666.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="node" scheme="https://lyreal666.com/tags/node/"/>
+    
+      <category term="spider" scheme="https://lyreal666.com/tags/spider/"/>
+    
+      <category term="github" scheme="https://lyreal666.com/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>总结下 javascript 中的一些小技巧</title>
+    <link href="https://lyreal666.com/%E6%80%BB%E7%BB%93%E4%B8%8B-javascript-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>https://lyreal666.com/%E6%80%BB%E7%BB%93%E4%B8%8B-javascript-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/</id>
+    <published>2019-04-03T11:19:00.000Z</published>
+    <updated>2020-02-06T11:11:22.952Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇文章主要记录一下平时自己实践得到的, 博客中学习的以及在一些项目源码中看到的 javascript 技巧。有些东西可以说是奇淫技巧，有些可能是 ES6+ 中一些比较具有实用性的新语法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="https://lyreal666.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 nodejs 写爬虫(一): 常用模块和 js 语法</title>
+    <link href="https://lyreal666.com/%E4%BD%BF%E7%94%A8-nodejs-%E5%86%99%E7%88%AC%E8%99%AB-%E4%B8%80-%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97%E5%92%8C-js-%E8%AF%AD%E6%B3%95/"/>
+    <id>https://lyreal666.com/%E4%BD%BF%E7%94%A8-nodejs-%E5%86%99%E7%88%AC%E8%99%AB-%E4%B8%80-%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97%E5%92%8C-js-%E8%AF%AD%E6%B3%95/</id>
+    <published>2019-04-01T04:14:00.000Z</published>
+    <updated>2020-02-06T11:15:02.418Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇是使用 nodejs 写爬虫系列教程的第一篇, 介绍了使用 nodejs 写爬虫过程中常用的模块和一些必须掌握的 js 语法&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="后端" scheme="https://lyreal666.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="https://lyreal666.com/tags/javascript/"/>
+    
+      <category term="node" scheme="https://lyreal666.com/tags/node/"/>
+    
+      <category term="spider" scheme="https://lyreal666.com/tags/spider/"/>
+    
+      <category term="package" scheme="https://lyreal666.com/tags/package/"/>
+    
+      <category term="module" scheme="https://lyreal666.com/tags/module/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react native 总结</title>
+    <link href="https://lyreal666.com/react-native-%E6%80%BB%E7%BB%93/"/>
+    <id>https://lyreal666.com/react-native-%E6%80%BB%E7%BB%93/</id>
+    <published>2019-02-22T14:16:00.000Z</published>
+    <updated>2020-02-06T11:09:16.938Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近用 react native 做了一个移动端跨平台 App。&lt;strong&gt;Learn once, write everywhere&lt;/strong&gt; 确实不是吹的。&lt;/p&gt;&lt;p&gt;本文主要由以下几部分构成:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;为什么我选择了 react native&lt;/li&gt;&lt;li&gt;react natve 开发 App 体验&lt;/li&gt;&lt;li&gt;react native 的有哪些坑&lt;/li&gt;&lt;li&gt;对未来移动跨平台开发的展望&lt;/li&gt;&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="react native" scheme="https://lyreal666.com/tags/react-native/"/>
+    
+  </entry>
+  
+</feed>
