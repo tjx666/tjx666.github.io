@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lyreal666.com/"/>
-  <updated>2020-02-20T12:02:10.877Z</updated>
+  <updated>2020-03-28T04:04:02.896Z</updated>
   <id>https://lyreal666.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>那些你应该考虑卸载的 VSCode 扩展</title>
+    <link href="https://lyreal666.com/%E9%82%A3%E4%BA%9B%E4%BD%A0%E5%BA%94%E8%AF%A5%E8%80%83%E8%99%91%E5%8D%B8%E8%BD%BD%E7%9A%84-VSCode-%E6%89%A9%E5%B1%95/"/>
+    <id>https://lyreal666.com/%E9%82%A3%E4%BA%9B%E4%BD%A0%E5%BA%94%E8%AF%A5%E8%80%83%E8%99%91%E5%8D%B8%E8%BD%BD%E7%9A%84-VSCode-%E6%89%A9%E5%B1%95/</id>
+    <published>2020-03-28T02:36:02.000Z</published>
+    <updated>2020-03-28T04:04:02.896Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这篇文章可能会得罪一部分 VSCode 扩展的作者，但是我实在是看不惯网上很多的文章还在推荐一些已经过时的扩展，我觉得作为 VSCode 的老粉，我有必要写一篇文章科普一下。&lt;/p&gt;&lt;p&gt;在 VSCode
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>从零开始配置 react + typescript（三）：webpack</title>
@@ -79,7 +102,7 @@
     <link href="https://lyreal666.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-react-typescript%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Adotfiles/"/>
     <id>https://lyreal666.com/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-react-typescript%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Adotfiles/</id>
     <published>2020-02-01T04:25:00.000Z</published>
-    <updated>2020-02-20T09:32:01.864Z</updated>
+    <updated>2020-04-03T10:43:42.289Z</updated>
     
     <summary type="html">
     
@@ -100,23 +123,19 @@
   </entry>
   
   <entry>
-    <title>讲清楚 JavaScript 原型</title>
+    <title>讲清楚-JavaScript-原型</title>
     <link href="https://lyreal666.com/%E8%AE%B2%E6%B8%85%E6%A5%9A-JavaScript-%E5%8E%9F%E5%9E%8B/"/>
     <id>https://lyreal666.com/%E8%AE%B2%E6%B8%85%E6%A5%9A-JavaScript-%E5%8E%9F%E5%9E%8B/</id>
-    <published>2020-01-27T07:24:00.000Z</published>
-    <updated>2020-02-06T11:16:23.753Z</updated>
+    <published>2020-01-27T07:24:04.949Z</published>
+    <updated>2020-03-31T10:37:06.449Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;记得以前知乎上看到过一个问题：&lt;a href=&quot;https://www.zhihu.com/question/60165921&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;面试一个 5 年的前端，却连&lt;strong&gt;原型链&lt;/strong&gt;也搞不清楚，满口都是 Vue，React 之类的实现，这样的人该用吗？&lt;/a&gt; 。写文章的时候又回去看了下这个问题，300 多个回答，有很多大佬都回答了这个问题，说明这个问题还是挺受关注的。最近几年，随着 ES6 ，TypeScript 及类似的中间语言的流行，我们平时做业务开发很少能接触到原型，基本上都是用 ES6 class 来去更简单的，更直观的实现以前构造器加原型做的事情。&lt;/p&gt;&lt;p&gt;其实在我看来，我觉得原型链是一个非常重要的基础知识。如果一个人说他 C 语言很精通，但是他汇编不熟，你信吗？我觉得 winter 说的挺简洁到位的：&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;这又涉及到我之前讲过的面试官技巧，面试，是对一个人的能力系统性评价，搞清楚一个人擅长什么不会什么，所以问知识性问题，为了避免误判，一定要大量问、系统化地问。&lt;/p&gt;&lt;p&gt;不会原型很能说明问题，至少他在库的设计方面会有极大劣势，而且可能学习习惯上是有问题的，也有可能他根本就不太会 JS 语言，但是这不意味着凭借一个问题就可以判定这个人不能用。&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;本文包括以下内容：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;JavaScript 原型&lt;/li&gt;&lt;li&gt;构造器和 &lt;code&gt;prototype&lt;/code&gt;&lt;/li&gt;&lt;li&gt;原型链&lt;/li&gt;&lt;li&gt;原型的用途&lt;/li&gt;&lt;li&gt;ES6 class 和构造器的关系&lt;/li&gt;&lt;li&gt;原型继承&lt;/li&gt;&lt;li&gt;JavaScript 和原型相关语法特性&lt;/li&gt;&lt;li&gt;原型污染&lt;/li&gt;&lt;/ol&gt;
+      &lt;p&gt;记得以前知乎上看到过一个问题：&lt;a href=&quot;https://www.zhihu.com/question/60165921&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;面试一个 5 年的前端，却连&lt;strong&gt;原型链&lt;/strong&gt;也搞不清楚，满口都是 Vue，React 之类的实现，这样的人该用吗？&lt;/a&gt; 。写文章的时候又回去看了下这个问题，300 多个回答，有很多大佬都回答了这个问题，说明这个问题还是挺受关注的。最近几年，随着 ES6 ，TypeScript 及类似的中间语言的流行，我们平时做业务开发很少能接触到原型，基本上都是用 ES6 class 来去更简单的，更直观的实现以前构造器加原型做的事情。&lt;/p&gt;&lt;p&gt;其实在我看来，我觉得原型链是一个非常重要的基础知识。如果一个人说他 C 语言很精通，但是他汇编不熟，你信吗？我觉得 winter 说的挺简洁到位的：&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;这又涉及到我之前讲过的面试官技巧，面试，是对一个人的能力系统性评价，搞清楚一个人擅长什么不会什么，所以问知识性问题，为了避免误判，一定要大量问、系统化地问。&lt;/p&gt;&lt;p&gt;不会原型很能说明问题，至少他在库的设计方面会有极大劣势，而且可能学习习惯上是有问题的，也有可能他根本就不太会 JS 语言，但是这不意味着凭借一个问题就可以判定这个人不能用。&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;本文包括以下内容：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;JavaScript 原型&lt;/li&gt;&lt;li&gt;构造器和 &lt;code&gt;prototype&lt;/code&gt;&lt;/li&gt;&lt;li&gt;原型链&lt;/li&gt;&lt;li&gt;原型的用途&lt;/li&gt;&lt;li&gt;ES6 class 和构造器的关系&lt;/li&gt;&lt;li&gt;原型继承&lt;/li&gt;&lt;li&gt;JavaScript 和原型相关语法特性&lt;/li&gt;&lt;li&gt;原型污染&lt;/li&gt;&lt;li&gt;补充一道最近校招面试碰到的和原型相关的面试题&lt;/li&gt;&lt;/ol&gt;
     
     </summary>
     
     
-      <category term="前端" scheme="https://lyreal666.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="prototype" scheme="https://lyreal666.com/tags/prototype/"/>
     
   </entry>
   
@@ -173,11 +192,11 @@
     <link href="https://lyreal666.com/javascript-%E5%9F%BA%E7%A1%80%E4%B9%8B-call-apply-bind/"/>
     <id>https://lyreal666.com/javascript-%E5%9F%BA%E7%A1%80%E4%B9%8B-call-apply-bind/</id>
     <published>2019-06-27T13:29:00.000Z</published>
-    <updated>2020-02-06T11:08:57.481Z</updated>
+    <updated>2020-03-10T14:23:24.598Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;系统，扎实的 javascript 语言基础是一个优秀的前端工程师必须具备的。在看了一些关于 call，apply，bind 的文章后，我还是打算写下这篇总结，原因有几个。首先，在如今 ES6 大行其道的今天，很多文章中讲述的它们的应用场景其实用 ES6 可以更优雅的解决，但是基本上·没有文章会去提 ES6 的解法。再则，讲它们的实现原理的文章其实不少，但是或多或少实现的有些不够完美，本文将把它们通过代码一一比较完美的实现，让它们不再神秘。不谦虚的说，关于 call，apply，bind 的知识，看这一篇文章就够了。&lt;/p&gt;
+      &lt;p&gt;系统，扎实的 javascript 语言基础是一个优秀的前端工程师必须具备的。在看了一些关于 call，apply，bind 的文章后，我还是打算写下这篇总结，原因有几个。首先，在如今 ES6 大行其道的今天，很多文章中讲述的它们的应用场景其实用 ES6 可以更优雅的解决，但是基本上·没有文章会去提 ES6 的解法。再则，讲它们的实现原理的文章其实不少，但是或多或少实现的有些不够完美，本文将把它们通过代码一一比较完美的实现，让它们不再神秘。不谦虚的说，关于 call，apply，bind 的知识，看这一篇文章就够了。&lt;/p&gt;&lt;p&gt;文章中的源码地址：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9naXRodWIuY29tL3RqeDY2Ni9kZWVwLWluLWZlL3RyZWUvbWFzdGVyL3NyYy9jYWxsQXBwbHlCaW5k&quot; title=&quot;https://github.com/tjx666/deep-in-fe/tree/master/src/callApplyBind&quot;&gt;deep-in-fe&lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
     
     </summary>
     
@@ -242,7 +261,7 @@
     <link href="https://lyreal666.com/git-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/"/>
     <id>https://lyreal666.com/git-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</id>
     <published>2019-05-08T11:28:00.000Z</published>
-    <updated>2020-02-06T11:10:46.718Z</updated>
+    <updated>2020-02-27T07:32:55.872Z</updated>
     
     <summary type="html">
     
