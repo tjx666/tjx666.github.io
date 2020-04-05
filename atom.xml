@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lyreal666.com/"/>
-  <updated>2020-03-28T04:04:02.896Z</updated>
+  <updated>2020-04-03T15:18:02.569Z</updated>
   <id>https://lyreal666.com/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>那些你应该考虑卸载的 VSCode 扩展</title>
-    <link href="https://lyreal666.com/%E9%82%A3%E4%BA%9B%E4%BD%A0%E5%BA%94%E8%AF%A5%E8%80%83%E8%99%91%E5%8D%B8%E8%BD%BD%E7%9A%84-VSCode-%E6%89%A9%E5%B1%95/"/>
-    <id>https://lyreal666.com/%E9%82%A3%E4%BA%9B%E4%BD%A0%E5%BA%94%E8%AF%A5%E8%80%83%E8%99%91%E5%8D%B8%E8%BD%BD%E7%9A%84-VSCode-%E6%89%A9%E5%B1%95/</id>
-    <published>2020-03-28T02:36:02.000Z</published>
-    <updated>2020-03-28T04:04:02.896Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;这篇文章可能会得罪一部分 VSCode 扩展的作者，但是我实在是看不惯网上很多的文章还在推荐一些已经过时的扩展，我觉得作为 VSCode 的老粉，我有必要写一篇文章科普一下。&lt;/p&gt;&lt;p&gt;在 VSCode
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>从零开始配置 react + typescript（三）：webpack</title>
